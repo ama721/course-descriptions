@@ -16,14 +16,15 @@ sapply(pckgs, FUN = require, character.only = TRUE)
 # function to clean the text up
 clean.text <- function(x)
 {
-	# replace various characters and spaces
-   x = mgsub(x, c("\n","\t", "\r"), c(" ", " ", " "))
-   # remove blank spaces at the beginning
-   x = gsub("^ ", "", x)
-   # remove blank spaces at the end
-   x = gsub(" $", "", x)
-  # double check on the blank spaces
-  x = trimws(x, which = c("both", "left", "right"), whitespace = "[ \t\r\n]")
+# replace various characters and spaces
+x = mgsub(x, c("\n","\t", "\r"), c(" ", " ", " "))
+# remove blank spaces at the beginning
+x = gsub("^ ", "", x)
+# remove blank spaces at the end
+x = gsub(" $", "", x)
+# double check on the blank spaces
+x = trimws(x, which = c("both", "left", "right"), whitespace = "[ \t\r\n]")
+
 }
 
 # function to scrape data		
@@ -31,13 +32,15 @@ do_smthn <- function(x){
 	
 text_html <- read_html(x)
 
-dd <- text_html %>%
-			html_nodes("p") %>%
-			html_text() %>%
-			unlist() %>%
-			clean.text() %>%
-			tolower() %>%
-			paste(., collapse=" ")
+dd <- 
+text_html %>%
+html_nodes("p") %>%
+html_text() %>%
+unlist() %>%
+clean.text() %>%
+tolower() %>%
+paste(., collapse=" ")
+
 }
 
 
