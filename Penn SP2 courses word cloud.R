@@ -89,6 +89,7 @@ tdm <- as.matrix(tdm) %>% data.frame()
 #### VISUALIZE DATA ####
 #  separate clouds same plot
 dev.new(width=12, height=6, unit="in")
+png(file="SP2 Course Descriptions2.png", width = 12, height = 6, units = 'in', res = 300, bg = "white")
 par(mfrow=c(1,3))
 #Create word cloud of mssp courses
 set.seed(0721)
@@ -100,3 +101,4 @@ rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#405AAF"))
 #Create word cloud of nonprofit leadership courses
 wordcloud(rownames(tdm), tdm$npl, min.freq = 3, scale=c(7, .2), random.order = FALSE, 
 rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#595959"))
+dev.off(); dev.off()
