@@ -12,6 +12,10 @@ if (any(pckgs %notin% rownames(installed.packages())==TRUE)){
 sapply(pckgs, FUN = require, character.only = TRUE)
 
 
+#### Set seed ####
+set.seed(0721)
+
+
 ##### FUNCTIONS ####
 # function to clean the text up
 clean.text <- function(x)
@@ -100,13 +104,12 @@ dev.new(width=10, height=6, unit="in")
 png(file="SP2 Course Descriptions2.png", width = 12, height = 6, units = 'in', res = 300, bg = "transparent")
 par(mfrow=c(1,3))
 #Create word cloud of mssp courses
-set.seed(0721)
-wordcloud(rownames(tdm), tdm$mssp, min.freq = 3, scale=c(6, .08), random.order = FALSE, 
+wordcloud(rownames(tdm), tdm$mssp, min.freq = 3, scale=c(5, .08), random.order = FALSE, 
 rot.per = 0, max.words = 50,  random.color = FALSE, colors= c("#c31f2b"))
 #Create word cloud of social work courses
-wordcloud(rownames(tdm), tdm$swrk, min.freq = 3, scale=c(6, .08), random.order = FALSE, 
+wordcloud(rownames(tdm), tdm$swrk, min.freq = 3, scale=c(5, .08), random.order = FALSE, 
 rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#004685"))
 #Create word cloud of nonprofit leadership courses
-wordcloud(rownames(tdm), tdm$npl, min.freq = 3, scale=c(6, .08), random.order = FALSE, 
+wordcloud(rownames(tdm), tdm$npl, min.freq = 3, scale=c(5, .08), random.order = FALSE, 
 rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#404041"))
 dev.off(); dev.off()
