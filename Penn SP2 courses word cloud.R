@@ -102,11 +102,11 @@ par(mfrow=c(1,3))
 #Create word cloud of mssp courses
 set.seed(0721)
 wordcloud(rownames(tdm), tdm$mssp, min.freq = 3, scale=c(6, .08), random.order = FALSE, 
-rot.per = 0, max.words = 50,  random.color = FALSE, colors= c("indianred"))
+rot.per = 0, max.words = 50,  random.color = FALSE, colors= c("#c31f2b"))
 #Create word cloud of social work courses
 wordcloud(rownames(tdm), tdm$swrk, min.freq = 3, scale=c(6, .08), random.order = FALSE, 
-rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#405AAF"))
+rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#004685"))
 #Create word cloud of nonprofit leadership courses
 wordcloud(rownames(tdm), tdm$npl, min.freq = 3, scale=c(6, .08), random.order = FALSE, 
-rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#595959"))
+rot.per = 0, max.words = 50, random.color = FALSE, colors= c("#404041"))
 dev.off(); dev.off()
