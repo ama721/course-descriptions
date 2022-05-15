@@ -20,13 +20,7 @@ set.seed(0721)
 # function to clean the text up
 clean.text <- function(x)
 {# replace various characters and spaces
-x = mgsub(x, c("\n","\t", "\r"), c(" ", " ", " "))
-# remove blank spaces at the beginning
-x = gsub("^ ", "", x)
-# remove blank spaces at the end
-x = gsub(" $", "", x)
-# double check on the blank spaces
-x = trimws(x, which = c("both", "left", "right"), whitespace = "[ \t\r\n]")
+x <- gsub(pattern = "[[:space:]]+", replacement = " ", x = x)
 }
 
 # function to scrape data		
