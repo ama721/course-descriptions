@@ -2,11 +2,8 @@
 # create notin operator
 `%notin%` <- Negate(`%in%`)
 
-# Download packages if not available
+# Required packages
 pckgs <- c("tidyverse","readxl","rvest", "tm", "wordcloud","stringr","mgsub")
-
-if (any(pckgs %notin% rownames(installed.packages())==TRUE)){
-  install.packages(pckgs, repos = c(CRAN = "http://cloud.r-project.org"))}
 
 # Load packages
 sapply(pckgs, FUN = require, character.only = TRUE)
